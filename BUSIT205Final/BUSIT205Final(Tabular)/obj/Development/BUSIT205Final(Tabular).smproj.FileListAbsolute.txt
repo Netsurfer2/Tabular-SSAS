@@ -1,0 +1,6 @@
+C:\_BISolutions\TheFinal\BUSIT205Final\BUSIT205Final(Tabular)\bin\Model.asdatabase
+C:\_BISolutions\TheFinal\BUSIT205Final\BUSIT205Final(Tabular)\bin\Model.deploymenttargets
+C:\_BISolutions\TheFinal\BUSIT205Final\BUSIT205Final(Tabular)\bin\Model.deploymentoptions
+C:\_BISolutions\TheFinal\BUSIT205Final\BUSIT205Final(Tabular)\obj\Development\Model.asdatabase
+C:\_BISolutions\TheFinal\BUSIT205Final\BUSIT205Final(Tabular)\obj\Development\Model.deploymentoptions
+C:\_BISolutions\TheFinal\BUSIT205Final\BUSIT205Final(Tabular)\obj\Development\Model.deploymenttargets

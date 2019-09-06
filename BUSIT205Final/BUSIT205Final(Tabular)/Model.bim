@@ -1,0 +1,1004 @@
+{
+  "name": "SemanticModel",
+  "compatibilityLevel": 1200,
+  "model": {
+    "culture": "en-US",
+    "dataSources": [
+      {
+        "name": "SqlServer localhost DW205Final",
+        "connectionString": "Provider=SQLNCLI11;Data Source=.;Initial Catalog=DW205Final;Integrated Security=SSPI;Persist Security Info=false",
+        "impersonationMode": "impersonateServiceAccount",
+        "annotations": [
+          {
+            "name": "ConnectionEditUISource",
+            "value": "SqlServer"
+          }
+        ]
+      },
+      {
+        "name": "SqlServer localhost DW205Final 2",
+        "connectionString": "Provider=SQLNCLI11;Data Source=.;Initial Catalog=DW205Final;Integrated Security=SSPI;Persist Security Info=false",
+        "impersonationMode": "impersonateServiceAccount",
+        "annotations": [
+          {
+            "name": "ConnectionEditUISource",
+            "value": "SqlServer"
+          }
+        ]
+      },
+      {
+        "name": "SqlServer localhost DW205Final 3",
+        "connectionString": "Provider=SQLNCLI11;Data Source=.;Initial Catalog=DW205Final;Integrated Security=SSPI;Persist Security Info=false",
+        "impersonationMode": "impersonateServiceAccount",
+        "annotations": [
+          {
+            "name": "ConnectionEditUISource",
+            "value": "SqlServer"
+          }
+        ]
+      }
+    ],
+    "tables": [
+      {
+        "name": "vDimCategories",
+        "columns": [
+          {
+            "name": "CategoryKey",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "CategoryKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "CategoryID",
+            "dataType": "int64",
+            "sourceColumn": "CategoryID",
+            "formatString": "0",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "CategoryName",
+            "dataType": "string",
+            "sourceColumn": "CategoryName",
+            "sourceProviderType": "Char"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "vDimCategories",
+            "dataView": "full",
+            "source": {
+              "query": " SELECT [dbo].[vDimCategories].* FROM [dbo].[vDimCategories] ",
+              "dataSource": "SqlServer localhost DW205Final"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[vDimCategories].* FROM [dbo].[vDimCategories] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "vDimCategories"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "vDimCustomers",
+        "columns": [
+          {
+            "name": "CustomerKey",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "CustomerKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "CustomerID",
+            "dataType": "int64",
+            "sourceColumn": "CustomerID",
+            "formatString": "0",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "CustomerName",
+            "dataType": "string",
+            "sourceColumn": "CustomerName",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "CustomerCity",
+            "dataType": "string",
+            "sourceColumn": "CustomerCity",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "CustomerState",
+            "dataType": "string",
+            "sourceColumn": "CustomerState",
+            "sourceProviderType": "WChar"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "vDimCustomers",
+            "dataView": "full",
+            "source": {
+              "query": " SELECT [dbo].[vDimCustomers].* FROM [dbo].[vDimCustomers] ",
+              "dataSource": "SqlServer localhost DW205Final"
+            }
+          }
+        ],
+        "hierarchies": [
+          {
+            "name": "Customer Location Hierarchy",
+            "levels": [
+              {
+                "name": "CustomerID",
+                "ordinal": 0,
+                "column": "CustomerID"
+              },
+              {
+                "name": "CustomerName",
+                "ordinal": 1,
+                "column": "CustomerName"
+              },
+              {
+                "name": "CustomerState",
+                "ordinal": 2,
+                "column": "CustomerState"
+              },
+              {
+                "name": "CustomerCity",
+                "ordinal": 3,
+                "column": "CustomerCity"
+              }
+            ]
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[vDimCustomers].* FROM [dbo].[vDimCustomers] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "vDimCustomers"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "vDimDates",
+        "dataCategory": "Time",
+        "columns": [
+          {
+            "name": "DateKey",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "DateKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Date",
+            "dataType": "dateTime",
+            "isKey": true,
+            "sourceColumn": "Date",
+            "formatString": "General Date",
+            "sourceProviderType": "DBDate"
+          },
+          {
+            "name": "DateName",
+            "dataType": "string",
+            "sourceColumn": "DateName",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "MonthKey",
+            "dataType": "int64",
+            "sourceColumn": "MonthKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "MonthName",
+            "dataType": "string",
+            "sourceColumn": "MonthName",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "YearKey",
+            "dataType": "int64",
+            "sourceColumn": "YearKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "YearName",
+            "dataType": "string",
+            "sourceColumn": "YearName",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "type": "calculated",
+            "name": "Year",
+            "dataType": "int64",
+            "isDataTypeInferred": true,
+            "expression": "YEAR([Date])"
+          },
+          {
+            "type": "calculated",
+            "name": "Quarter",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "YEAR([Date])&\"-\"&SWITCH(MONTH([Date]),1,\"Q1\",2,\"Q1\",3,\"Q1\",4,\"Q2\",5,\"Q2\",6,\"Q2\",7,\"Q3\",8,\"Q3\",9,\"Q3\",10,\"Q4\",11,\"Q4\",12,\"Q4\")"
+          },
+          {
+            "type": "calculated",
+            "name": "Month",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "FORMAT([Date],\"MMMM,YYYY\")"
+          },
+          {
+            "type": "calculated",
+            "name": "Month Sort",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "FORMAT([Date], \"YYYYMM\")"
+          },
+          {
+            "type": "calculated",
+            "name": "Day of Year",
+            "dataType": "int64",
+            "isDataTypeInferred": true,
+            "expression": "DATEDIFF(DATE(YEAR([Date]),1,1),[Date],DAY)+1"
+          },
+          {
+            "type": "calculated",
+            "name": "Day of Quarter",
+            "dataType": "int64",
+            "isDataTypeInferred": true,
+            "expression": "DATEDIFF(DATE(YEAR([Date]),SWITCH(MONTH([Date]),1,1,2,1,3,1,4,4,5,4,6,4,7,7,8,7,9,7,10,10,11,10,12,10),1),[Date],DAY)+1"
+          },
+          {
+            "type": "calculated",
+            "name": "Day of Month",
+            "dataType": "int64",
+            "isDataTypeInferred": true,
+            "expression": "DAY([Date])"
+          },
+          {
+            "type": "calculated",
+            "name": "Month of Year Sort",
+            "dataType": "int64",
+            "isDataTypeInferred": true,
+            "expression": "MONTH([Date])"
+          },
+          {
+            "type": "calculated",
+            "name": "Month of Quarter",
+            "dataType": "int64",
+            "isDataTypeInferred": true,
+            "expression": "SWITCH(MONTH([Date]),1,1,2,2,3,3,4,1,5,2,6,3,7,1,8,2,9,3,10,1,11,2,12,3)"
+          },
+          {
+            "type": "calculated",
+            "name": "Month of Year",
+            "dataType": "int64",
+            "isDataTypeInferred": true,
+            "expression": "SWITCH(MONTH([Date]),1,1,2,1,3,1,4,2,5,2,6,2,7,3,8,3,9,3,10,4,11,4,12,4)"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "vDimDates",
+            "dataView": "full",
+            "source": {
+              "query": " SELECT [dbo].[vDimDates].* FROM [dbo].[vDimDates] ",
+              "dataSource": "SqlServer localhost DW205Final"
+            }
+          }
+        ],
+        "hierarchies": [
+          {
+            "name": "Date-Year-Month-DayHierarchy",
+            "levels": [
+              {
+                "name": "Date",
+                "ordinal": 0,
+                "column": "Date"
+              },
+              {
+                "name": "Year",
+                "ordinal": 1,
+                "column": "Year"
+              },
+              {
+                "name": "Quarter",
+                "ordinal": 2,
+                "column": "Quarter"
+              },
+              {
+                "name": "Month",
+                "ordinal": 3,
+                "column": "Month"
+              },
+              {
+                "name": "Day of Month",
+                "ordinal": 4,
+                "column": "Day of Month"
+              }
+            ]
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[vDimDates].* FROM [dbo].[vDimDates] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "vDimDates"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "vDimDeparments",
+        "columns": [
+          {
+            "name": "DepartmentKey",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "DepartmentKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "DepartmentID",
+            "dataType": "int64",
+            "sourceColumn": "DepartmentID",
+            "formatString": "0",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "DepartmentName",
+            "dataType": "string",
+            "sourceColumn": "DepartmentName",
+            "sourceProviderType": "WChar"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "vDimDeparments",
+            "dataView": "full",
+            "source": {
+              "query": " SELECT [dbo].[vDimDeparments].* FROM [dbo].[vDimDeparments] ",
+              "dataSource": "SqlServer localhost DW205Final"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[vDimDeparments].* FROM [dbo].[vDimDeparments] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "vDimDeparments"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "vDimEmployees",
+        "columns": [
+          {
+            "name": "EmployeeKey",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "EmployeeKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "EmployeeID",
+            "dataType": "int64",
+            "sourceColumn": "EmployeeID",
+            "formatString": "0",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "EmployeeFullName",
+            "dataType": "string",
+            "sourceColumn": "EmployeeFullName",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "DepartmentKey",
+            "dataType": "int64",
+            "sourceColumn": "DepartmentKey",
+            "formatString": "0",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "ManagerKey",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "ManagerKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "type": "calculated",
+            "name": "Manager-Employees",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": " PATH ( vDimEmployees[EmployeeKey], vDimEmployees[ManagerKey] )"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "vDimEmployees",
+            "dataView": "full",
+            "source": {
+              "query": " SELECT [dbo].[vDimEmployees].* FROM [dbo].[vDimEmployees] ",
+              "dataSource": "SqlServer localhost DW205Final"
+            }
+          }
+        ],
+        "hierarchies": [
+          {
+            "name": "Manager-Employee Hierarchy",
+            "levels": [
+              {
+                "name": "Manager-Employees",
+                "ordinal": 0,
+                "column": "Manager-Employees"
+              }
+            ]
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[vDimEmployees].* FROM [dbo].[vDimEmployees] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "vDimEmployees"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "vDimProducts",
+        "columns": [
+          {
+            "name": "ProductKey",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "ProductKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "ProductID",
+            "dataType": "int64",
+            "sourceColumn": "ProductID",
+            "formatString": "0",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "ProductName",
+            "dataType": "string",
+            "sourceColumn": "ProductName",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "ProductStandardPrice",
+            "dataType": "double",
+            "sourceColumn": "ProductStandardPrice",
+            "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
+            "sourceProviderType": "Numeric",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"Currency\" Accuracy=\"2\" ThousandSeparator=\"True\"><Currency LCID=\"1033\" DisplayName=\"$ English (United States)\" Symbol=\"$\" PositivePattern=\"0\" NegativePattern=\"0\" /></Format>"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "vDimProducts",
+            "dataView": "full",
+            "source": {
+              "query": " SELECT [dbo].[vDimProducts].* FROM [dbo].[vDimProducts] ",
+              "dataSource": "SqlServer localhost DW205Final"
+            }
+          }
+        ],
+        "hierarchies": [
+          {
+            "name": "Product Pices Hierarchy",
+            "levels": [
+              {
+                "name": "ProductID",
+                "ordinal": 0,
+                "column": "ProductID"
+              },
+              {
+                "name": "ProductName",
+                "ordinal": 1,
+                "column": "ProductName"
+              },
+              {
+                "name": "ProductStandardPrice",
+                "ordinal": 2,
+                "column": "ProductStandardPrice"
+              }
+            ]
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[vDimProducts].* FROM [dbo].[vDimProducts] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "vDimProducts"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "vFactInventories",
+        "columns": [
+          {
+            "name": "InventoryID",
+            "dataType": "int64",
+            "sourceColumn": "InventoryID",
+            "formatString": "0",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "ProductKey",
+            "dataType": "int64",
+            "sourceColumn": "ProductKey",
+            "formatString": "0",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "InventoryDateKey",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "InventoryDateKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "InventoryDate",
+            "dataType": "dateTime",
+            "sourceColumn": "InventoryDate",
+            "formatString": "General Date",
+            "sourceProviderType": "DBDate"
+          },
+          {
+            "name": "InventoryCounts",
+            "dataType": "int64",
+            "sourceColumn": "InventoryCounts",
+            "sourceProviderType": "Integer"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "vFactInventories",
+            "dataView": "full",
+            "source": {
+              "query": " SELECT [dbo].[vFactInventories].* FROM [dbo].[vFactInventories] ",
+              "dataSource": "SqlServer localhost DW205Final"
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "Sum of InventoryCounts",
+            "expression": "SUM([InventoryCounts])",
+            "formatString": "#,0"
+          }
+        ],
+        "hierarchies": [
+          {
+            "name": "InventoryHierarchy",
+            "levels": [
+              {
+                "name": "InventoryID",
+                "ordinal": 0,
+                "column": "InventoryID"
+              },
+              {
+                "name": "InventoryCounts",
+                "ordinal": 1,
+                "column": "InventoryCounts"
+              },
+              {
+                "name": "InventoryDate",
+                "ordinal": 2,
+                "column": "InventoryDate"
+              }
+            ]
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[vFactInventories].* FROM [dbo].[vFactInventories] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "vFactInventories"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "vFactProductCategories",
+        "isHidden": true,
+        "columns": [
+          {
+            "name": "ProductKey",
+            "dataType": "int64",
+            "sourceColumn": "ProductKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "CategoryKey",
+            "dataType": "int64",
+            "sourceColumn": "CategoryKey",
+            "sourceProviderType": "Integer"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "vFactProductCategories",
+            "dataView": "full",
+            "source": {
+              "query": " SELECT [dbo].[vFactProductCategories].* FROM [dbo].[vFactProductCategories] ",
+              "dataSource": "SqlServer localhost DW205Final"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[vFactProductCategories].* FROM [dbo].[vFactProductCategories] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "vFactProductCategories"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "vFactSales",
+        "columns": [
+          {
+            "name": "SalesID",
+            "dataType": "int64",
+            "sourceColumn": "SalesID",
+            "formatString": "0",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "SalesLineItemID",
+            "dataType": "int64",
+            "sourceColumn": "SalesLineItemID",
+            "formatString": "0",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "EmployeeKey",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "EmployeeKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "SalesDateKey",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "SalesDateKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "SalesDate",
+            "dataType": "dateTime",
+            "sourceColumn": "SalesDate",
+            "formatString": "General Date",
+            "sourceProviderType": "DBDate"
+          },
+          {
+            "name": "ShipDateKey",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "ShipDateKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "ShipDate",
+            "dataType": "dateTime",
+            "sourceColumn": "ShipDate",
+            "formatString": "General Date",
+            "sourceProviderType": "DBDate"
+          },
+          {
+            "name": "CustomerKey",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "CustomerKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "ProductKey",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "ProductKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "SalesDollars",
+            "dataType": "double",
+            "sourceColumn": "SalesDollars",
+            "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
+            "sourceProviderType": "Numeric",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"Currency\" Accuracy=\"2\" ThousandSeparator=\"True\"><Currency LCID=\"1033\" DisplayName=\"$ English (United States)\" Symbol=\"$\" PositivePattern=\"0\" NegativePattern=\"0\" /></Format>"
+              }
+            ]
+          },
+          {
+            "name": "SalesUnits",
+            "dataType": "int64",
+            "sourceColumn": "SalesUnits",
+            "formatString": "0",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "type": "calculated",
+            "name": "Days to Ship Sale",
+            "dataType": "int64",
+            "isDataTypeInferred": true,
+            "expression": "DATEDIFF([SalesDate],[ShipDate],DAY)"
+          },
+          {
+            "type": "calculated",
+            "name": "Average Dollars Per each Sale",
+            "dataType": "double",
+            "isDataTypeInferred": true,
+            "expression": "[SalesDollars]/[SalesUnits]",
+            "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"Currency\" Accuracy=\"2\" ThousandSeparator=\"True\"><Currency LCID=\"1033\" DisplayName=\"$ English (United States)\" Symbol=\"$\" PositivePattern=\"0\" NegativePattern=\"0\" /></Format>"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "vFactSales",
+            "dataView": "full",
+            "source": {
+              "query": " SELECT [dbo].[vFactSales].* FROM [dbo].[vFactSales] ",
+              "dataSource": "SqlServer localhost DW205Final"
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "Sales in Units",
+            "expression": "SUM([SalesUnits])",
+            "formatString": "#,0"
+          },
+          {
+            "name": "Sales in Dollars",
+            "expression": "SUM([SalesDollars])",
+            "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"Currency\" Accuracy=\"2\"><Currency LCID=\"1033\" DisplayName=\"$ English (United States)\" Symbol=\"$\" PositivePattern=\"0\" NegativePattern=\"0\" /></Format>"
+              }
+            ]
+          },
+          {
+            "name": "Number of Sales",
+            "expression": "SUM([SalesID])",
+            "formatString": "#,0"
+          },
+          {
+            "name": "Sales YTD",
+            "expression": "TOTALYTD([Number of Sales],'vFactSales'[SalesDate],All('vFactSales'))"
+          },
+          {
+            "name": "Average Dollars on all Sales Combined",
+            "expression": "AVERAGE([Average Dollars Per each Sale])",
+            "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"Currency\" Accuracy=\"2\" ThousandSeparator=\"True\"><Currency LCID=\"1033\" DisplayName=\"$ English (United States)\" Symbol=\"$\" PositivePattern=\"0\" NegativePattern=\"0\" /></Format>"
+              }
+            ]
+          }
+        ],
+        "hierarchies": [
+          {
+            "name": "Sales Hierarchy",
+            "levels": [
+              {
+                "name": "SalesID",
+                "ordinal": 0,
+                "column": "SalesID"
+              },
+              {
+                "name": "SalesLineItemID",
+                "ordinal": 1,
+                "column": "SalesLineItemID"
+              },
+              {
+                "name": "SalesDate",
+                "ordinal": 2,
+                "column": "SalesDate"
+              },
+              {
+                "name": "ShipDate",
+                "ordinal": 3,
+                "column": "ShipDate"
+              },
+              {
+                "name": "SalesUnits",
+                "ordinal": 4,
+                "column": "SalesUnits"
+              },
+              {
+                "name": "SalesDollars",
+                "ordinal": 5,
+                "column": "SalesDollars"
+              }
+            ]
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[vFactSales].* FROM [dbo].[vFactSales] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "vFactSales"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "7952b286-920a-4e45-87d3-d72169ac17c2",
+        "fromTable": "vFactInventories",
+        "fromColumn": "InventoryDate",
+        "toTable": "vDimDates",
+        "toColumn": "DateKey",
+        "crossFilteringBehavior": "bothDirections"
+      },
+      {
+        "name": "a87a0af2-446e-4bfa-8c17-b4a800327a7e",
+        "fromTable": "vFactInventories",
+        "fromColumn": "ProductKey",
+        "toTable": "vDimProducts",
+        "toColumn": "ProductKey",
+        "crossFilteringBehavior": "bothDirections"
+      },
+      {
+        "name": "156fed99-be92-484b-9fb9-1f0c59eb43d4",
+        "fromTable": "vFactSales",
+        "fromColumn": "CustomerKey",
+        "toTable": "vDimCustomers",
+        "toColumn": "CustomerKey",
+        "crossFilteringBehavior": "bothDirections"
+      },
+      {
+        "name": "102d198f-5178-41b1-961d-99fd86485586",
+        "fromTable": "vFactSales",
+        "fromColumn": "SalesDateKey",
+        "toTable": "vDimDates",
+        "toColumn": "DateKey",
+        "crossFilteringBehavior": "bothDirections"
+      },
+      {
+        "name": "0bd1a733-def8-4359-a2f7-47ce3c8449f5",
+        "fromTable": "vFactSales",
+        "fromColumn": "ShipDateKey",
+        "toTable": "vDimDates",
+        "toColumn": "DateKey",
+        "isActive": false
+      },
+      {
+        "name": "f7d980be-23d3-4ee1-9365-4801366577ca",
+        "fromTable": "vFactProductCategories",
+        "fromColumn": "ProductKey",
+        "toTable": "vDimProducts",
+        "toColumn": "ProductKey",
+        "crossFilteringBehavior": "bothDirections"
+      },
+      {
+        "name": "53c399e9-174e-4cb5-8f28-b65f164a5274",
+        "fromTable": "vFactProductCategories",
+        "fromColumn": "CategoryKey",
+        "toTable": "vDimCategories",
+        "toColumn": "CategoryKey",
+        "crossFilteringBehavior": "bothDirections"
+      },
+      {
+        "name": "0b20d81c-2f9b-485e-ad50-06f4373599a4",
+        "fromTable": "vDimEmployees",
+        "fromColumn": "EmployeeKey",
+        "toTable": "vDimDeparments",
+        "toColumn": "DepartmentKey",
+        "crossFilteringBehavior": "bothDirections"
+      },
+      {
+        "name": "6f996796-bed8-4c68-b7fb-2f5992694b4c",
+        "fromTable": "vFactSales",
+        "fromColumn": "EmployeeKey",
+        "toTable": "vDimEmployees",
+        "toColumn": "EmployeeKey",
+        "crossFilteringBehavior": "bothDirections"
+      },
+      {
+        "name": "3a8c70dd-349c-4f64-8273-5e458e83cb31",
+        "fromTable": "vFactSales",
+        "fromColumn": "ProductKey",
+        "toTable": "vDimProducts",
+        "toColumn": "ProductKey",
+        "isActive": false
+      }
+    ],
+    "annotations": [
+      {
+        "name": "ClientCompatibilityLevel",
+        "value": "400"
+      }
+    ]
+  },
+  "id": "SemanticModel"
+}

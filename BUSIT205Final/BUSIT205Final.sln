@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "BUSIT205Final", "BUSIT205Final\BUSIT205Final.dwproj", "{FF0EF4C6-6CEB-468C-A9C4-F16154CA1008}"
+EndProject
+Project("{6870E480-7721-4708-BFB8-9AE898AA21B3}") = "BUSIT205Final(Tabular)", "BUSIT205Final(Tabular)\BUSIT205Final(Tabular).smproj", "{8CE414BB-95B2-4C99-9E03-51BA72086E22}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Checklist", "Checklist", "{99710F19-DED9-491D-83C4-89E534B40B74}"
+	ProjectSection(SolutionItems) = preProject
+		Checklist\BusIT 205 Final Checklist.xlsx = Checklist\BusIT 205 Final Checklist.xlsx
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Excel Reports", "Excel Reports", "{1F6206DD-44F1-4ED4-B34D-702EA9702309}"
+	ProjectSection(SolutionItems) = preProject
+		Excel Reports\ExcelReports.xlsx = Excel Reports\ExcelReports.xlsx
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lessons Learned", "Lessons Learned", "{8B9E9638-A466-41C7-BA6B-8E357878266C}"
+	ProjectSection(SolutionItems) = preProject
+		Lessons Learned\ChrisSingleton-LessonsLearned.docx = Lessons Learned\ChrisSingleton-LessonsLearned.docx
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{02D352F3-CB6C-4297-A26D-2D0EE14D7550}"
+	ProjectSection(SolutionItems) = preProject
+		Scripts\DerivedCalculationsAndMDX.sql = Scripts\DerivedCalculationsAndMDX.sql
+		Scripts\SQLScript-Views.sql = Scripts\SQLScript-Views.sql
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Steps-Taken", "Steps-Taken", "{7C6DF5BE-5E8F-4AF0-B81C-808E236D606B}"
+	ProjectSection(SolutionItems) = preProject
+		Steps-Taken\ChrisSingleton-StepsTaken.docx = Steps-Taken\ChrisSingleton-StepsTaken.docx
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|x86 = Development|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FF0EF4C6-6CEB-468C-A9C4-F16154CA1008}.Development|x86.ActiveCfg = Development
+		{FF0EF4C6-6CEB-468C-A9C4-F16154CA1008}.Development|x86.Build.0 = Development
+		{FF0EF4C6-6CEB-468C-A9C4-F16154CA1008}.Development|x86.Deploy.0 = Development
+		{8CE414BB-95B2-4C99-9E03-51BA72086E22}.Development|x86.ActiveCfg = Development|x86
+		{8CE414BB-95B2-4C99-9E03-51BA72086E22}.Development|x86.Build.0 = Development|x86
+		{8CE414BB-95B2-4C99-9E03-51BA72086E22}.Development|x86.Deploy.0 = Development|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

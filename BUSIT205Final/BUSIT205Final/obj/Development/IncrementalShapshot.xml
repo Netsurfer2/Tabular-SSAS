@@ -1,0 +1,103 @@
+﻿<DeploymentSnapshot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
+  <Target>
+    <Database>BUSIT205Final</Database>
+    <Server>localhost</Server>
+    <ConnectionString>Data Source=localhost;Timeout=0</ConnectionString>
+  </Target>
+  <Options>
+    <TransactionalDeployment>false</TransactionalDeployment>
+    <PartitionDeployment>DeployPartitions</PartitionDeployment>
+    <RoleDeployment>DeployRolesRetainMembers</RoleDeployment>
+    <ProcessingOption>DoNotProcess</ProcessingOption>
+    <OutputScript></OutputScript>
+    <ImpactAnalysisFile></ImpactAnalysisFile>
+    <ConfigurationSettingsDeployment>Deploy</ConfigurationSettingsDeployment>
+    <OptimizationSettingsDeployment>Deploy</OptimizationSettingsDeployment>
+    <WriteBackTableCreation>UseExisting</WriteBackTableCreation>
+  </Options>
+  <Snapshot>
+    <ObjectSnapshots>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
+        <TimeStamp>qk7eaUSkqQSofci9Qu11mJ9I0wY=6/12/2017 11:36:40 AM6/12/2017 11:36:40 AM</TimeStamp>
+        <ID>
+          <String>DW205Final</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
+        <TimeStamp>gBCakIVDy3Hj2Hrk4tsSbasHxPw=6/12/2017 3:18:02 PM6/12/2017 11:43:09 AM</TimeStamp>
+        <ID>
+          <String>DW205FinalDSV</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>lg1MpfC4KqUipyG4hb5zu8peHkI=6/12/2017 9:24:56 PM6/12/2017 12:18:31 PM</TimeStamp>
+        <ID>
+          <String>vDimProducts</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>1KcIkebnMhiVe7DmVFAbEYLv9O0=6/12/2017 1:17:21 PM6/12/2017 12:21:13 PM</TimeStamp>
+        <ID>
+          <String>vDimDates</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>dgAD65FU8ly+1moTKidi8lW9HPg=6/12/2017 3:13:06 PM6/12/2017 12:23:23 PM</TimeStamp>
+        <ID>
+          <String>vFactInventories</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>ipiGJvJY3wRZeQIoNHvT5m3Alos=6/12/2017 1:25:12 PM6/12/2017 12:24:35 PM</TimeStamp>
+        <ID>
+          <String>vDimCategories</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>J4g/8PuQwVUJfCrRAahPaXlLh68=6/12/2017 9:26:21 PM6/12/2017 12:25:39 PM</TimeStamp>
+        <ID>
+          <String>vDimCustomers</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>N/aiyQwIf18nIUcDhu6AXh2hCG4=6/12/2017 9:35:01 PM6/12/2017 12:26:40 PM</TimeStamp>
+        <ID>
+          <String>vDimEmployees</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>6l8f5uagGRKJjkS4EmXtz6ncUTY=6/12/2017 9:47:12 PM6/12/2017 12:28:47 PM</TimeStamp>
+        <ID>
+          <String>vFactSales</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>rc/O1ypjB73sStDVWYxhYsG/N/4=6/12/2017 11:38:38 PM6/12/2017 12:56:20 PM6qJWl4t+zSyN+aM1sb9n3LMfIcE=6/12/2017 12:56:21 PM6/12/2017 12:56:20 PM</TimeStamp>
+        <ID>
+          <String>DW205FinalCube</String>
+        </ID>
+      </ObjectSnapshot>
+    </ObjectSnapshots>
+    <DatabaseSnapshot>
+      <Type>Microsoft.AnalysisServices.Database</Type>
+      <TimeStamp>Eq1AbNtAAyD1nzHIMHYzI6Dndig=6/12/2017 11:20:54 AM6/12/2017 11:20:54 AM</TimeStamp>
+      <ID>
+        <String>BUSIT205Final</String>
+      </ID>
+    </DatabaseSnapshot>
+    <Granularity>Coarse</Granularity>
+  </Snapshot>
+  <AssemblyLocations />
+  <ProcessingComplete>true</ProcessingComplete>
+  <LastDeployed>2017-06-13T06:38:41.053333Z</LastDeployed>
+</DeploymentSnapshot>
